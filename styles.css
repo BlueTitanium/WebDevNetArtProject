@@ -1,3 +1,9 @@
+@font-face {
+    font-family:"Raleway";
+    font-weight: 400;
+    src: url("fonts/Raleway-Regular.ttf") format("truetype");
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -40,6 +46,14 @@ svg{
     align-items: center;
     gap: 10px;
 }
+
+a svg{
+    transition: all 500ms ease-in-out;
+}
+
+.nextArrow:hover svg{
+    filter: drop-shadow(-.5vw 0px 4px #A5DAD7) drop-shadow(.5vw 0px 4px #A5DAD7);
+}
 .backArrow{
     position: absolute;
     left: 2vw;
@@ -51,6 +65,9 @@ svg{
     align-items: center;
     transform: scaleX(-1);
     gap: 10px;
+}
+.backArrow:hover svg{
+    filter: drop-shadow(-.5vw 0px 4px #E89896) drop-shadow(.5vw 0px 4px #E89896);
 }
 .header{
     display: flex;
@@ -133,7 +150,7 @@ p{
 .leftHolder{
     display: flex;
     height: 70vh;
-    padding: 40px 10vw;
+    padding: 10px 10vw;
     align-items: flex-start;
     gap: 30px;
     flex-shrink: 0;
@@ -147,7 +164,9 @@ p{
     flex: 1 0 0;
     align-self: stretch;
 }
-
+#treeImg{
+    object-fit: contain;
+}
 .galleryImage{
     display: grid;
     padding: 0px 100px;
@@ -158,4 +177,20 @@ p{
 .galleryImage img{
     width: 20vw;
     height: 20vw;
+}
+
+
+@media (max-width: 800px) {
+    .leftHolder{
+        flex-direction: column;
+    }
+    p{
+        font-size: 14px;
+    }
+    .header{
+        flex-direction: column;
+    }
+    .galleryImage{
+        grid-template-columns: 1fr 1fr;
+    }
 }
